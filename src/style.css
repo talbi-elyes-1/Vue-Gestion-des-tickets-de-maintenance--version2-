@@ -1,0 +1,484 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+:root {
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+    color: #172554;
+    background: #f1f5f9;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    --primary: #172554;
+    --primary-light: #1e40af;
+    --accent: #3b82f6;
+    --background: #f1f5f9;
+    --surface: #ffffff;
+    --text: #172554;
+    --muted: #64748b;
+    --border: #e2e8f0;
+    --danger: #dc2626;
+    --radius: 14px;
+    --shadow: 0 4px 20px rgba(15, 23, 42, 0.06);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-width: 320px;
+    min-height: 100vh;
+    background: var(--background);
+}
+
+#app {
+    width: 100%;
+    min-height: 100vh;
+    margin: 0;
+    text-align: left;
+}
+
+h1, h2, h3, p {
+    margin-top: 0;
+}
+
+h1, h2, h3 {
+    color: var(--primary);
+    font-weight: 700;
+}
+
+h1 {
+    font-size: 32px;
+    letter-spacing: -0.8px;
+}
+
+h2 {
+    font-size: 23px;
+    letter-spacing: -0.4px;
+}
+
+h3 {
+    font-size: 18px;
+}
+
+p {
+    line-height: 1.6;
+}
+
+a {
+    color: var(--accent);
+}
+
+/* Application header */
+
+.app > header {
+    background: var(--primary);
+    color: white;
+    padding: 24px 7%;
+    box-shadow: 0 4px 15px rgba(15, 23, 42, 0.12);
+}
+
+.app > header h1 {
+    color: white;
+    font-size: 25px;
+    margin: 0 0 18px;
+}
+
+.app > header nav {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 18px;
+    color: #94a3b8;
+}
+
+.app > header nav a {
+    color: #dbeafe;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    transition: color 0.2s;
+}
+
+.app > header nav a:hover,
+.app > header nav a.router-link-active {
+    color: white;
+}
+
+/* Main layout */
+
+main {
+    width: 100%;
+    max-width: 1250px;
+    margin: 0 auto;
+    padding: 40px 24px;
+}
+
+.page {
+    min-height: 75vh;
+    background: transparent;
+    color: var(--text);
+    font-family: inherit;
+}
+
+.content {
+    max-width: 1150px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+.header {
+    background: linear-gradient(120deg, #172554, #1e40af);
+    color: white;
+    padding: 38px 8%;
+    border-radius: 0 0 18px 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header h1 {
+    color: white;
+    font-size: 32px;
+    margin: 10px 0;
+}
+
+.subtitle {
+    color: #bfdbfe;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.description {
+    color: #dbeafe;
+}
+
+.header-icon {
+    font-size: 52px;
+}
+
+/* Cards and sections */
+
+.filters,
+.results,
+section:not(.filters):not(.results) {
+    background: var(--surface);
+    padding: 28px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    margin-bottom: 24px;
+    box-shadow: var(--shadow);
+}
+
+.filters h2,
+.results h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+/* Forms */
+
+form {
+    width: 100%;
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 32px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+}
+
+form > div {
+    margin-bottom: 22px;
+}
+
+label {
+    display: block;
+    margin-bottom: 9px;
+    color: #334155;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    min-width: 0;
+    padding: 13px 15px;
+    border: 1px solid #cbd5e1;
+    border-radius: 9px;
+    background: #fff;
+    color: #172554;
+    font-family: inherit;
+    font-size: 14px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+textarea {
+    min-height: 125px;
+    resize: vertical;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: #94a3b8;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.13);
+}
+
+/* Buttons */
+
+button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    padding: 13px 21px;
+    border: none;
+    border-radius: 9px;
+    background: var(--primary-light);
+    color: white;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+}
+
+button:hover:not(:disabled) {
+    background: #1d4ed8;
+    transform: translateY(-1px);
+}
+
+button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+button[type="button"] {
+    background: #dc2626;
+    margin-left: 10px;
+}
+
+button[type="button"]:hover:not(:disabled) {
+    background: #b91c1c;
+}
+
+/* Ticket list */
+
+.filter-row {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.filter-row input,
+.filter-row select {
+    flex: 1;
+    min-width: 180px;
+}
+
+.results-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+}
+
+.counter {
+    background: #dbeafe;
+    color: #1e40af;
+    padding: 7px 13px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.ticket-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 18px;
+}
+
+.ticket-card {
+    display: block;
+    padding: 22px;
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+}
+
+.ticket-card:hover {
+    transform: translateY(-4px);
+    border-color: #93c5fd;
+    box-shadow: 0 10px 25px rgba(15, 23, 42, 0.09);
+}
+
+.card-top,
+.card-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+.ticket-id {
+    color: var(--muted);
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.ticket-card h3 {
+    margin: 20px 0 10px;
+    font-size: 18px;
+}
+
+.requester {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.badge {
+    display: inline-block;
+    padding: 6px 11px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+    border: 1px solid transparent;
+}
+
+.priorite-haute {
+    background: #fee2e2;
+    color: #991b1b;
+    border-color: #fecaca;
+}
+
+.priorite-moyenne {
+    background: #fef3c7;
+    color: #92400e;
+    border-color: #fde68a;
+}
+
+.priorite-basse {
+    background: #dcfce7;
+    color: #166534;
+    border-color: #bbf7d0;
+}
+
+.statut-ouvert {
+    background: #f3e8ff;
+    color: #6b21a8;
+    border-color: #d8b4fe;
+}
+
+.statut-en-cours {
+    background: #dbeafe;
+    color: #1e40af;
+    border-color: #bfdbfe;
+}
+
+.statut-résolu {
+    background: #dcfce7;
+    color: #166534;
+    border-color: #bbf7d0;
+}
+
+.statut-fermé {
+    background: #e2e8f0;
+    color: #334155;
+    border-color: #cbd5e1;
+}
+
+.date {
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.message {
+    text-align: center;
+    padding: 30px;
+    color: var(--muted);
+}
+
+.error,
+p[style*="color: red"] {
+    color: var(--danger) !important;
+    background: #fef2f2;
+    border: 1px solid #fecaca;
+    border-radius: 9px;
+    padding: 12px 15px;
+}
+
+footer {
+    text-align: center;
+    padding: 25px;
+    color: var(--muted);
+    font-size: 13px;
+}
+
+/* Responsive */
+
+@media (max-width: 700px) {
+    main {
+        padding: 25px 15px;
+    }
+
+    .app > header {
+        padding: 22px 20px;
+    }
+
+    .app > header h1 {
+        font-size: 21px;
+    }
+
+    .header {
+        padding: 28px 20px;
+    }
+
+    .header h1 {
+        font-size: 25px;
+    }
+
+    .header-icon {
+        font-size: 35px;
+    }
+
+    .filters,
+    .results,
+    section:not(.filters):not(.results) {
+        padding: 20px;
+    }
+
+    form {
+        padding: 22px;
+    }
+
+    .results-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    button {
+        width: 100%;
+    }
+
+    button[type="button"] {
+        margin: 10px 0 0;
+    }
+}
